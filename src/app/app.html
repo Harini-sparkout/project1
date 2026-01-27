@@ -1,11 +1,11 @@
 <app-user></app-user>
 
 <app-display></app-display>
-<p>custom pipe:{{"sparkouttech"|capitalize}}</p>
+<ul>
+  <li *ngFor="let student of students|capitalize">{{student}}</li>
+</ul>
 <p color="blue">This text will be blue!</p>
-
 <p [color]="'green'">This text will be green!</p>
-
 <p color>This text will be red (default color)</p>
 <p [ngClass]="classes">Hello World</p>
 <p [ngStyle]="{'color': isRed ? 'red' : 'blue'}">
