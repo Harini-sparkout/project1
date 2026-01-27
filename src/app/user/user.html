@@ -1,0 +1,46 @@
+<div *ngIf="branch === 'CSE'">
+  <h3>You selected Computer Science (CSE)</h3>
+</div>
+<div *ngIf="branch === 'ECE'">
+    <h3>You selected Electronics (ECE)</h3>
+  </div>
+  <div *ngIf="branch === 'EEE'">
+      <h3>You selected Electrical (EEE)</h3>
+    </div>
+    <div *ngIf="branch == '5'">
+        <h3>You selected Mechanical (MECH)</h3>
+      </div>
+      <div *ngIf="branch === 'AIDS'">
+        <h3>You selected Artificial Intelligence & DS (AIDS)</h3>
+    </div>
+
+
+<h3>using if else</h3>
+<div *ngIf="isLoggedIn; else notLoggedIn">
+    <p>login successfully</p>
+</div>
+<ng-template #notLoggedIn>
+    <p> continue login</p>
+</ng-template>
+
+<h3>nested if</h3>
+<div *ngIf="login">
+    <p>welcome to</p>
+    <div *ngIf="department==='developer'">
+        <p>develpoer department</p>
+    </div>
+</div>
+<h3>ngfor</h3>
+<h3>student list</h3>
+<li *ngFor="let student of students; let i = index">
+    {{i+1}}.{{student}}
+</li>
+<h3>use ngswithcase</h3>
+<div [ngSwitch]="weather">
+    <div *ngSwitchCase="'sunny'">its very dehydrated  
+    </div>
+    <div *ngSwitchCase="'rainy'">the climate is cool</div>
+    <div *ngSwitchCase="'cloudy'">it might rain later</div>
+    <div *ngSwitchDefault>unknown</div>
+
+</div>
