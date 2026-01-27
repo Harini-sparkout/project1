@@ -5,8 +5,12 @@ import { Directive, ElementRef, Input } from '@angular/core';
   standalone: true
 })
 export class Color {
-  @Input('color') colorName!: string;
-  constructor(private el: ElementRef) {
-  this.el.nativeElement.style.color = 'teal';
+
+  constructor(private el: ElementRef) {}
+
+  @Input('color')
+  set colorName(value: string | null) {
+    const finalColor = value && value.trim() !== '' ? value : 'red';
+    this.el.nativeElement.style.color = finalColor;
   }
 }
