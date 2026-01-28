@@ -5,12 +5,16 @@ import { CapitalizePipe } from './capitalize-pipe';
 import { Display } from './display/display';
 import { Color } from './color';
 import { NgClass, NgFor, NgStyle } from '@angular/common';
-import { Child } from './child/child';
+import {  Count } from './count/count';
 import { PromiseComponent } from './promise/promise';
+import { Child } from './child/child';
+import { Structural } from './structural/structural';
+import { Private } from './private/private';
+
 
 @Component({
   selector: 'app-root',
-  imports: [User,CapitalizePipe,Display,Color,NgClass,NgStyle,Child,PromiseComponent,NgFor],
+  imports: [User, CapitalizePipe, Display, Color, NgClass, NgStyle, Count, PromiseComponent, NgFor,Child,Structural,Private],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
