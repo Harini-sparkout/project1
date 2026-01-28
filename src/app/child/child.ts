@@ -1,31 +1,12 @@
-import { AsyncPipe, NgFor } from '@angular/common';
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-
+import{Component} from '@angular/core';
+import { Base } from '../base/base';
 @Component({
-  selector: 'app-child',
+  selector:'app-child',
   standalone:true,
-  imports: [AsyncPipe],
-  templateUrl: './child.html',
-  styleUrl: './child.css',
+  templateUrl:'./child.html'
 })
-export class Child {
-  counter$: Observable<number>;
-  constructor(){
-    this.counter$ = new Observable<number>((observer)=>{
-      let count=0;
-      
-      const intervalId= setInterval(()=>{
-        observer.next(count++);
-
-      },1000);
-      setTimeout(()=>{
-        observer.complete();
-
-      },5000);
-
-    }
-    )
+export class Child extends Base{
+        ShowDetails() : string{
+          return "child can see:" + this.message + "," +this.items.join(',');
+        }
 }
-  }
-        
